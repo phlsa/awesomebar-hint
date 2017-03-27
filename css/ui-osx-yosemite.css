@@ -1,0 +1,644 @@
+/* ====================== */
+/* ------UI Styles------- */
+/* ====================== */
+.imagePreloader {
+  width: 0px;
+  height: 0px;
+  background-image: url('../images-osx-yosemite/icons-toolbar.svg');
+}
+
+
+
+/* --Window-- */
+.window {
+  background-image: linear-gradient(to bottom, hsla(0, 0%, 93%,1), hsla(0, 0%, 87%,1) 40px);
+
+  border-radius: 4px;
+
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+
+
+/* --Titlebar and Widgets-- */
+.titleBar {
+  height: 40px;
+  align-items: center;
+}
+
+.windowControls {
+  margin: 0;
+}
+
+.widget {
+  width: 12px;
+  height: 12px;
+}
+.windowControls > .widget {
+  margin: 0 4px;
+  border-radius: 100%;
+}
+.windowControls > .widget:first-child {
+  margin-left: 0;
+}
+.windowControls > .widget:last-child {
+  margin-right: 0;
+}
+
+.titleBar > :first-child {
+  margin-left: 8px;
+}
+.titleBar > :last-child {
+  margin-right: 8px;
+}
+
+.widget > .icon {
+  width: 12px;
+  height: 12px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.widget.widgetClose {
+  background-color: #ff6058;
+  box-shadow: 0 0 0 1px #e03b32 inset;
+}
+.windowControls:hover > .widget.widgetClose:active {
+  background-color: #bf4943;
+  box-shadow: 0 0 0 1px #a92d26 inset;
+}
+.windowControls:hover > .widget.widgetClose > .icon {
+  background-image: url("../images-osx-yosemite/window-widgets.svg#window-widget-close");
+}
+.windowControls:hover > .widget.widgetClose:hover:active > .icon {
+  background-image: url("../images-osx-yosemite/window-widgets.svg#window-widget-close-pressed");
+}
+@media (min-resolution: 2dppx) {
+  .windowControls:hover > .widget.widgetClose > .icon {
+    background-image: url("../images-osx-yosemite/window-widgets.svg#window-widget-close-HiRes");
+  }
+  .windowControls:hover > .widget.widgetClose:hover:active > .icon {
+    background-image: url("../images-osx-yosemite/window-widgets.svg#window-widget-close-HiRes-pressed");
+  }
+}
+
+.widget.widgetMinimize {
+  background-color: #ffbf2f;
+  box-shadow: 0 0 0 1px #df9c07 inset;
+}
+.windowControls:hover > .widget.widgetMinimize:hover:active {
+  background-color: #bf9023;
+  box-shadow: 0 0 0 1px #a87505 inset;
+}
+.windowControls:hover > .widget.widgetMinimize > .icon {
+  background-image: url("../images-osx-yosemite/window-widgets.svg#window-widget-minimize");
+}
+.windowControls:hover > .widget.widgetMinimize:hover:active > .icon {
+  background-image: url("../images-osx-yosemite/window-widgets.svg#window-widget-minimize-pressed");
+}
+@media (min-resolution: 2dppx) {
+  .windowControls:hover > .widget.widgetMinimize > .icon {
+    background-image: url("../images-osx-yosemite/window-widgets.svg#window-widget-minimize-HiRes");
+  }
+  .windowControls:hover > .widget.widgetMinimize:hover:active > .icon {
+    background-image: url("../images-osx-yosemite/window-widgets.svg#window-widget-minimize-HiRes-pressed");
+  }
+}
+
+.widget.widgetFullscreenZoom {
+  background-color: #29cd42;
+  box-shadow: 0 0 0 1px #06a919 inset;
+}
+.windowControls:hover > .widget.widgetFullscreenZoom:active {
+  background-color: #1f9a31;
+  box-shadow: 0 0 0 1px #057f13 inset;
+}
+.windowControls:hover > .widget.widgetFullscreenZoom > .icon {
+  background-image: url("../images-osx-yosemite/window-widgets.svg#window-widget-fullscreenZoom");
+}
+.windowControls:hover > .widget.widgetFullscreenZoom:hover:active > .icon {
+  background-image: url("../images-osx-yosemite/window-widgets.svg#window-widget-fullscreenZoom-pressed");
+}
+
+
+
+/* --OuterContainer-- */
+.windowOuterContainer {
+  margin: 0;
+}
+
+
+
+/* --Tabs-- */
+.tabBar {
+  margin: -28px 0 0 56px;
+}
+
+.tab:hover {
+  background-image: url("../images-osx-yosemite/tab-background-start.svg"),
+                    url("../images-osx-yosemite/tab-background-middle.svg"),
+                    url("../images-osx-yosemite/tab-background-end.svg");
+}
+
+.tab.active {
+  background-image: url("../images-osx-yosemite/tab-active-start.svg"),
+                    url("../images-osx-yosemite/tab-active-middle.svg"),
+                    url("../images-osx-yosemite/tab-active-end.svg");
+}
+
+
+.tab > .label {
+  font-size: 11px;
+  color: #404040;
+  text-align: center;
+  text-shadow: 0 1px 0 hsla(0,0%,100%,.3);
+}
+.tab.active > .label {
+  color: #333333;
+}
+
+.tab .close {
+  background-image: url("../images-osx-lion/close.png");
+  background-size: auto 16px;
+  background-position: 0 0;
+  opacity: 1;
+}
+
+.tabSeparator {
+  background-image: url("../images-osx-yosemite/tabSeparator.svg#separator-short");
+}
+.tabBar:hover .tabSeparator {
+  background-image: url("../images-osx-yosemite/tabSeparator.svg#separator-tall");
+}
+
+.tabSeparatorHidden,
+.tabBar:hover .tabSeparatorHidden {
+  background-image: none;
+}
+
+
+/* Tab Favicon/Icon Rules */
+.tab.newTab .favicon { background-image: url("../images-osx-yosemite/icons-toolbar.svg#newTab"); }
+.tab.newTab:hover:active .favicon { background-image: url("../images-osx-yosemite/icons-toolbar.svg#newTab-pressed"); }
+
+
+
+/* --InnerContainer-- */
+.innerContainer {
+  box-shadow: 0 -1px 0 0 hsla(0,0%,0%,.2);
+/*
+  box-shadow: 0 -1px 0 0 #999999,
+              0 0 2px hsla(0,0%,0%,.1);
+*/
+/*
+  box-shadow: 0 -1px 0 0 hsla(0,0%,0%,.3),
+              0 0 2px hsla(0,0%,0%,.1);
+*/
+}
+
+
+
+/* --Toolbox (Containes Toolbars e.g. NavBar and BookmarksBar-- */
+.toolbox {
+  background: hsl(0,0%,92%);
+  border-bottom: 1px solid hsla(0,0%,0%,.15);
+  background-clip: border-box;
+}
+
+
+
+/* --NavBar-- */
+.navBar {
+  background-image: linear-gradient(hsl(0,0%,96%), hsl(0,0%,92%));
+  background-origin: border-box;
+  box-shadow: inset 0 1px 0 hsla(0,0%,100%,.5);
+}
+
+
+
+/* --Toolbar Items-- */
+/* Location and Search Fields */
+.locationBar,
+.searchBar {
+  background-color: hsla(0,0%,100%, 1);
+  border: 0;
+  border-color: hsla(210,54%,20%,.25);
+  border-radius: 3px;
+  box-shadow: 0 1px 0 hsla(0, 0%, 0%, .15),
+              0 0 0 1px hsla(210, 100%, 60%, .0) inset,
+              0 0 0 30px hsla(210, 100%, 60%, .0),
+              0 1px 0 #fff inset;
+  color: #808080;
+  font-size: 13px;
+  line-height: 21px;
+  outline: none;
+  opacity: 1;
+}
+
+.locationBar:hover,
+.searchBar:hover {
+  opacity: 1;
+}
+
+.locationBar.focus,
+.searchBar.focus:not(.customizeMode) {
+  box-shadow: 0 1px 0 hsla(0, 0%, 0%, .15),
+              0 0 0 1px hsla(210, 100%, 60%, .45) inset,
+              0 0 0 3px hsla(210, 100%, 60%, .45),
+              0 1px 0 #fff inset;
+  transition-duration: 150ms;
+}
+
+.searchText::-moz-placeholder {
+  font-style: normal;
+}
+
+
+.urlText {
+  font-size: 14px;
+}
+
+
+.identityBlock {
+  -moz-padding-start: 5px;
+  -moz-padding-end: 6px;
+}
+.identityBlockSeparator {
+  -moz-margin-end: 5px;
+}
+
+
+
+
+
+/* Icons - Toolbar */
+.toolbarButton.backButton > .iconContainer { background-image: url('../images-osx-yosemite/icons-toolbar.svg#navigation-back-large'); }
+.toolbarButton.backButton:hover:active > .iconContainer, .toolbarButton.backButton.open > .iconContainer { background-image: url('../images-osx-yosemite/icons-toolbar.svg#navigation-back-large-pressed'); }
+
+.toolbarButton.bookmarkStarButton > .iconContainer { background-image: url('../images-osx-yosemite/icons-toolbar.svg#bookmark-outline'); }
+.toolbarButton.bookmarkStarButton:hover:active > .iconContainer { background-image: url('../images-osx-yosemite/icons-toolbar.svg#bookmark-outline-pressed'); }
+
+.toolbarButton.bookmarkStarButton.bookmarked > .iconContainer { background-image: url('../images-osx-yosemite/icons-toolbar.svg#bookmark-filled'); }
+.toolbarButton.bookmarkStarButton.bookmarked:hover:active > .iconContainer { background-image: url('../images-osx-yosemite/icons-toolbar.svg#bookmark-filled-pressed'); }
+
+.toolbarButton.bookmarkPanelButton > .iconContainer { background-image: url('../images-osx-yosemite/icons-toolbar.svg#dropdown-panel-indicator'); }
+.toolbarButton.bookmarkPanelButton:hover:active > .iconContainer { background-image: url('../images-osx-yosemite/icons-toolbar.svg#dropdown-panel-indicator'); }
+
+.toolbarButton.homeButton > .iconContainer { background-image: url('../images-osx-yosemite/icons-toolbar.svg#home'); }
+.toolbarButton.homeButton:hover:active > .iconContainer { background-image: url('../images-osx-yosemite/icons-toolbar.svg#home-pressed'); }
+
+.toolbarButton.historyButton > .iconContainer { background-image: url('../images-osx-lion/toolbarButton-history.png'); }
+
+.toolbarButton.downloadButton > .iconContainer { background-image: url('../images-osx-yosemite/icons-toolbar.svg#downloads'); }
+.toolbarButton.downloadButton:hover:active > .iconContainer { background-image: url('../images-osx-yosemite/icons-toolbar.svg#downloads-pressed'); }
+
+.toolbarButton.firefoxButton > .iconContainer { background-image: url('../images-osx-yosemite/icons-toolbar.svg#menu'); }
+.toolbarButton.firefoxButton:hover:active > .iconContainer { background-image: url('../images-osx-yosemite/icons-toolbar.svg#menu-pressed'); }
+
+
+
+/* --Bookmarks Bar-- */
+.bookmarksBar .toolbarButton > .iconContainer { background-image: url("../images-osx-lion/favicon-generic.png"); }
+.bookmarksBar .toolbarButton.bookmarkFolderItem > .iconContainer { background-image: url("../images-osx-lion/bookmarkPanel-icon-folder.png"); }
+.dropDownArrow { background-image: url("../images-osx-lion/dropdownArrow.png"); }
+
+@media (min-resolution: 2dppx) {
+  .bookmarksBar .toolbarButton > .iconContainer { background-image: url("../images-osx-lion/favicon-generic@2x.png"); }
+  .bookmarksBar .toolbarButton.bookmarkFolderItem > .iconContainer { background-image: url("../images-osx-lion/bookmarkPanel-icon-folder@2x.png"); }
+  .dropDownArrow { background-image: url("../images-osx-lion/dropdownArrow@2x.png"); }
+}
+
+
+
+/* --Panels-- */
+.panel {
+  border-radius: 3.5px;
+  background-color: hsla(0,0%,99%,1);
+}
+
+/* Panel Items */
+.panel-item {
+  border-radius: 2.5px;
+}
+
+/* Panel Rows/Grid */
+.panel-menuItem {
+}
+
+.panel-menuItem > .label {
+  font-size: 13px;
+}
+
+
+
+/* ---Sub Panel Menus--- */
+.panel-subPanelMenu {
+  border-radius: 3.5px;
+}
+
+.bookmarkFolderItem > .panel-subPanelMenu > .panel-bottomRow {
+  height: 30px;
+}
+
+.bookmarkFolderItem > .panel-subPanelMenu > .panel-bottomRow > .panel-bottomRow-button > .label {
+  line-height: 30px;
+}
+
+
+
+/* --Menu Panel-- */
+.menuPanel .label {
+  font-size: 11px;
+}
+.menuPanel .panel-gridItem .label {
+  line-height: 12px;
+}
+
+.menuPanel-overflowContainer {
+  border-radius: 2.5px;
+}
+
+.menuPanel-overflowContainer > .panel-subPanelMenu {
+  border-radius: 0 0 0 0;
+}
+
+/* Icons - Menu Panel */
+.panel-splitButtonSegment > .iconContainer { background-position: left center; }
+.panel-splitButtonSegment:hover > .iconContainer { background-position: center center; }
+
+.panel-gridItem > .iconContainer { background-position: left center; }
+.panel-gridItem:hover > .iconContainer { background-position: center center; }
+.panel-gridItem.open > .iconContainer { background-position: right center; }
+
+.panel-bottomRow-button > .iconContainer { background-position: left center; }
+.panel-bottomRow-button:hover > .iconContainer { background-position: center center; }
+
+.panel-splitButtonSegment.cutButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-cut.png"); }
+.panel-splitButtonSegment.copyButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-copy.png"); }
+.panel-splitButtonSegment.pasteButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-paste.png"); }
+.panel-splitButtonSegment.zoomInButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-zoomIn.png"); }
+.panel-splitButtonSegment.zoomOutButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-zoomOut.png"); }
+
+.panel-gridItem.newWindowButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-newWindow.png"); }
+.panel-gridItem.privateWindowButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-privateWindow.png"); }
+.panel-gridItem.saveButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-save.png"); }
+
+.panel-gridItem.printButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-print.png"); }
+.panel-gridItem.historyButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-history.png"); }
+.panel-gridItem.fullscreenButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-fullscreen.png"); }
+
+.panel-gridItem.findButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-find.png"); }
+.panel-gridItem.settingsButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-settings.png"); }
+.panel-gridItem.addonsButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-addons.png"); }
+
+.panel-bottomRow-button.customizeButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-customize.png"); }
+.panel-bottomRow-button.helpButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-help.png"); }
+.panel-bottomRow-button.quitButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-quit.png"); }
+
+.panel-gridItem.shareButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-share.png"); }
+.panel-gridItem.feedButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-feed.png"); }
+.panel-gridItem.panoramaButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-panorama.png"); }
+.panel-gridItem.syncButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-sync.png"); }
+
+@media (min-resolution: 2dppx) {
+  .panel-splitButtonSegment.cutButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-cut@2x.png"); }
+  .panel-splitButtonSegment.copyButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-copy@2x.png"); }
+  .panel-splitButtonSegment.pasteButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-paste@2x.png"); }
+  .panel-splitButtonSegment.zoomInButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-zoomIn@2x.png"); }
+  .panel-splitButtonSegment.zoomOutButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-zoomOut@2x.png"); }
+  
+  .panel-gridItem.newWindowButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-newWindow@2x.png"); }
+  .panel-gridItem.privateWindowButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-privateWindow@2x.png"); }
+  .panel-gridItem.saveButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-save@2x.png"); }
+  
+  .panel-gridItem.printButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-print@2x.png"); }
+  .panel-gridItem.historyButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-history@2x.png"); }
+  .panel-gridItem.fullscreenButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-fullscreen@2x.png"); }
+  
+  .panel-gridItem.findButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-find@2x.png"); }
+  .panel-gridItem.settingsButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-settings@2x.png"); }
+  .panel-gridItem.addonsButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-addons@2x.png"); }
+  
+  .panel-bottomRow-button.customizeButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-customize@2x.png"); }
+  .panel-bottomRow-button.helpButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-help@2x.png"); }
+  .panel-bottomRow-button.quitButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-quit@2x.png"); }
+  
+  .panel-gridItem.shareButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-share@2x.png"); }
+  .panel-gridItem.feedButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-feed@2x.png"); }
+  .panel-gridItem.panoramaButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-panorama@2x.png"); }
+  .panel-gridItem.syncButton > .iconContainer { background-image: url("../images-osx-lion/menuPanel-icon-sync@2x.png"); }
+}
+
+
+/* --Downloads Panel-- */
+.downloadsPanel {
+  width: 340px;
+}
+
+
+
+/* --Bookmark Editing Panel-- */
+.bookmarkEditingPanel {
+  right: 111px;
+  width: 300px;
+}
+
+
+
+/* --Bookmarks Menu Panel-- */
+.bookmarksMenuPanel {
+  right: 84px;
+}
+
+.bookmarkItem > .iconContainer { background-image: url("../images-osx-lion/favicon-generic.png"); }
+.panel-menuItem.toggleable.toggled > .iconContainer { background-image: url("../images-osx-lion/menuItem-icon-checkmark.png"); }
+
+/* Icons — Bookmark Items */
+.bookmarkItem.bookmarkFolderItem > .iconContainer { background-image: url("../images-osx-lion/bookmarkPanel-icon-folder.png"); }
+.bookmarkItem.bookmarksToolbarItem > .iconContainer { background-image: url("../images-osx-lion/bookmarkPanel-icon-bookmarksToolbar.png"); }
+.bookmarkItem.bookmarksSmartFolder > .iconContainer { background-image: url("../images-osx-lion/bookmarkPanel-icon-folderSmart.png"); }
+.bookmarkItem.bookmarksFeedFolder > .iconContainer { background-image: url("../images-osx-lion/bookmarkPanel-icon-folderLive.png"); }
+.bookmarkItem.unsortedBookmarksItem > .iconContainer { background-image: url("../images-osx-lion/bookmarkPanel-icon-unsortedBookmarks.png"); }
+
+@media (min-resolution: 2dppx) {
+  .bookmarkItem > .iconContainer { background-image: url("../images-osx-lion/favicon-generic@2x.png"); }
+  .panel-menuItem.toggleable.toggled > .iconContainer { background-image: url("../images-osx-lion/menuItem-icon-checkmark@2x.png"); }
+  
+  /* Icons — Bookmark Items */
+  .bookmarkItem.bookmarkFolderItem > .iconContainer { background-image: url("../images-osx-lion/bookmarkPanel-icon-folder@2x.png"); }
+  .bookmarkItem.bookmarksToolbarItem > .iconContainer { background-image: url("../images-osx-lion/bookmarkPanel-icon-bookmarksToolbar@2x.png"); }
+  .bookmarkItem.bookmarksSmartFolder > .iconContainer { background-image: url("../images-osx-lion/bookmarkPanel-icon-folderSmart@2x.png"); }
+  .bookmarkItem.bookmarksFeedFolder > .iconContainer { background-image: url("../images-osx-lion/bookmarkPanel-icon-folderLive@2x.png"); }
+  .bookmarkItem.unsortedBookmarksItem > .iconContainer { background-image: url("../images-osx-lion/bookmarkPanel-icon-unsortedBookmarks@2x.png"); }
+}
+
+
+/* --Customize Mode-- */
+.window.customizeMode {
+  background-image: url("../images-general/customizeMode-gridTexture.png"),
+                    url("../images-osx-lion/background-noise-toolbar.png"),
+                    linear-gradient(hsl(0,0%,92%), hsl(0,0%,74%) 40px, hsl(0,0%,74%));
+  background-repeat: repeat;
+  background-size: auto;
+  background-attachment: fixed, fixed, scroll;
+}
+
+.combinedNavigationWidget {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+}
+
+.combinedNavigationWidget.customizeMode {
+  opacity: .65;
+}
+
+
+
+/* --Search Results-- */
+
+.popUp-searchResults {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  width: 100%;
+  background-color: -moz-field;
+  box-shadow: 0 1px 0 hsla(0,0%,0%,.1),
+              0 2px 0 hsla(0,0%,0%,.15);
+  color: -moz-fieldtext;
+  font: message-box;
+  font-size: 14px;  
+}
+
+.item-searchResult {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  width: 100%;
+  height: 30px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  -moz-user-select:none;
+  cursor: default;
+}
+
+.item-searchResult.selected {
+  color: #fff;
+  background-color: var(--color-blue);
+}
+
+/*
+.item-searchResult:hover {
+  background-color: hsl(210,80%,52%);
+  color: #fff;
+}
+*/
+.item-searchResult:not(.selected):hover {
+  background-color: var(--color-panel-hover-background);
+  border: 1px solid var(--color-panel-border);
+}
+
+.item-searchResult .icon {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.item-searchResult .icon.iconType-faviconGeneric {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("../images-general/favicon-generic.png");  
+}
+.item-searchResult .icon.iconType-favicon-firefox-new { background-image: url("../images-general/favicon-firefox-new.png"); }
+.item-searchResult .icon.iconType-favicon-firefox-old { background-image: url("../images-general/favicon-firefox-old.png"); }
+.item-searchResult .icon.iconType-favicon-github { background-image: url("../images-general/favicon-github.svg"); }
+.item-searchResult .icon.iconType-favicon-bugzilla { background-image: url("../images-general/favicon-bugzilla.png"); }
+.item-searchResult .icon.iconType-favicon-quirksmode { background-image: url("../images-general/favicon-quirksmode.png"); }
+
+.item-searchResult.resultType-visit .text-dash,
+.item-searchResult.resultType-visit .text-url {
+  opacity: 0;
+}
+.item-searchResult.resultType-visit.selected .text-dash,
+.item-searchResult.resultType-visit.selected .text-url {
+  opacity: 1;
+}
+
+.item-searchResult.resultType-bookmark .icon.iconType-status {
+  background-image: url("../images-osx-yosemite/icon-bookmarked.svg#bookmarked-icon");
+}
+.item-searchResult.resultType-bookmark.selected .icon.iconType-status {
+  background-image: url("../images-osx-yosemite/icon-bookmarked.svg#bookmarked-icon-inverted");
+}
+
+.item-searchResult.resultType-switchToTab .icon.iconType-status {
+  background-image: url("../images-osx-yosemite/icon-switch-to-tab.svg#switchToTab-icon");
+}
+.item-searchResult.resultType-switchToTab.selected .icon.iconType-status {
+  background-image: url("../images-osx-yosemite/icon-switch-to-tab.svg#switchToTab-icon-inverted");
+}
+
+.item-searchResult.resultType-search .icon.iconType-main {
+  background-image: url("../images-osx-yosemite/icon-search.svg#search-icon");
+}
+.item-searchResult.resultType-search.selected .icon.iconType-main {
+  background-image: url("../images-osx-yosemite/icon-search.svg#search-icon-inverted");
+}
+
+.item-searchResult .icon.iconType-status {
+  margin-right: 6px;
+}
+
+.item-searchResult .icon.iconType-main {
+  margin-right: 12px;
+}
+
+.text-title {
+  flex: 0 0 auto;
+  max-width: 66%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-title .term-emphasis {
+  color: GrayText;
+}
+.item-searchResult.selected .text-title .term-emphasis {
+  color: HighlightText;
+}
+
+.text-dash {
+  margin: 0 1ch;
+  font-size: 12px;
+  color: #000;
+  opacity: .3;
+}
+
+.text-url {
+  color: hsl(210, 77%, 47%);
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.text-url .term-emphasis {
+  color: hsl(210,86%,64%);
+}
+
+.item-searchResult.resultType-switchToTab .text-url {
+  color: hsl(178,100%,28%);
+}
+
+.item-searchResult.selected .text-url,
+.item-searchResult.selected .text-url .term-emphasis,
+.item-searchResult.selected .text-dash {
+  color: HighlightText;
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="3"
+     height="30"
+     viewBox="0 0 3 30">
+
+  <style>
+    g:not(:target) {
+      display: none;
+    }
+    .separator-inner {
+      fill: #000;
+      fill-opacity: .3;
+    }
+    .separator-outer {
+      fill: #fff;
+      fill-opacity: .2;
+    }
+  </style>
+
+  <defs>
+    <rect id="shape-separator-short-inner" x="1" y="5" width="1" height="20" />
+    <path id="shape-separator-short-outer" d="M0,4 l 3,0 l 0,22 l -3,0 l 0,-22z m1,1 l 1,0 l 0,20 l -1,0z" />
+
+    <rect id="shape-separator-tall-inner" x="1" y="1" width="1" height="28" />
+    <path id="shape-separator-tall-outer" d="M0,0 l 3,0 l 0,30 l -3,0 l 0,-30z m1,1 l 1,0 l 0,28 l -1,0z" />
+  </defs>
+
+  <g id="separator-short">
+    <use class="separator-outer"  xlink:href="#shape-separator-short-outer"/>
+    <use class="separator-inner"  xlink:href="#shape-separator-short-inner"/>
+  </g>
+
+  <g id="separator-tall">
+    <use class="separator-outer"  xlink:href="#shape-separator-tall-outer"/>
+    <use class="separator-inner"  xlink:href="#shape-separator-tall-inner"/>
+  </g>
+  
+</svg>

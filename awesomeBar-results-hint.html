@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Search Results - Current</title>
+    <meta charset="UTF-8" />
+
+    <link href="css/general.css" type="text/css" rel="stylesheet" />
+    <link href="css/backgrounds.css" type="text/css" rel="stylesheet" />
+    <link href="css/ui-base.css" type="text/css" rel="stylesheet" />
+    <link href="css/ui-osx-yosemite.css" type="text/css" rel="stylesheet" />
+    <link href="css/ui-osx-yosemite-searchResults-hint-01.css" type="text/css" rel="stylesheet" />
+    
+    <script src="jquery.min.js"></script>
+
+  </head>
+
+  <body class="background-desktop-picture" spellcheck="false">
+<!--   <body class="blue" spellcheck="false"> -->
+
+    <!-- Window [Start] -->
+    <div class="window">
+      <div class="imagePreloader"></div>
+      
+      <div class="titleBar">
+        <div class="windowControls">
+          <div class="widget widgetClose"><div class="icon"></div></div>
+          <div class="widget widgetMinimize"><div class="icon"></div></div>
+          <div class="widget widgetFullscreenZoom"><div class="icon"></div></div>
+        </div>
+        <div class="titleBarSpacer"></div>
+      </div>
+
+      <!-- OuterContainer [Start] -->
+      <div class="windowOuterContainer">
+  
+        <!-- TabBar [Start] -->
+        <div class="tabBar">
+          <div class="tab appTab cupcakesDashboard">
+            <div class="favicon"></div>
+          </div>
+          <div class="tabSeparator"></div>
+          <div class="tab chromaticPixel">
+            <div class="favicon"></div>
+            <div class="label">Chromatic Pixel</div>
+            <div class="close"></div>
+          </div>
+          <div class="tabSeparatorHidden"></div>
+          <div class="tab active mozilla">
+            <div class="favicon"></div>
+            <div class="label">Home of the Mozilla Project — Mozilla:</div>
+            <div class="close"></div>
+          </div>
+          <div class="tabSeparatorHidden"></div>
+          <div class="tab customizeTab">
+            <div class="favicon"></div>
+            <div class="label">Customize Your Firefox</div>
+            <div class="close"></div>
+          </div>
+          <div class="tabSeparator"></div>
+          <div class="tab loading">
+            <div class="favicon"></div>
+            <div class="label">Loading…</div>
+            <div class="close"></div>
+          </div>
+          <div class="tabSeparator"></div>
+          <div class="tab newTab">
+            <div class="favicon"></div>
+          </div>
+        </div>
+        
+        <div class="tabBar-separatorTop"></div>
+        <!-- TabBar [End] -->
+
+        <!-- InnerContainer [Start] -->
+          <!-- Toolbox [Start] -->
+          <div class="toolbox">
+            <!-- NavBar [Start] -->
+            <div class="navBar">
+              <div class="combinedNavigationWidget">
+                <div class="toolbarButton backButton"><div class="iconContainer"></div></div>
+                <div class="locationBar">
+                  <div class="identityBlock stateSearch"><div class="iconContainer"></div></div>
+                  <div class="identityBlockSeparator"></div>
+                  <div class="urlText" contenteditable="true"><span class="domainName">test</span></div>
+                  <div class="topSitesDropdown"><div class="iconContainer"></div></div>
+                  <div class="stopGoReload"><div class="iconContainer"></div></div>
+                </div>
+              </div>       
+              <div class="searchBar">
+                  <div class="searchIndicator"><div class="iconContainer"></div></div>
+                  <input class="searchText" contenteditable="true" placeholder="Search"></input>
+                  <div class="searchGo"><div class="iconContainer"></div></div>
+              </div>
+              <div class="toolbarCustomizeModeSpacer"></div>
+
+              <div class="toolbarButton splitButton bookmarksWidget">
+                <div class="toolbarButton bookmarkStarButton"><div class="iconContainer"></div></div>
+                <div class="bookmarkingAnimation"></div> <!-- Animate Star into Panel Icon -->
+                <div class="toolbarButtonSeparator"></div>
+                <div class="toolbarButton panelButton bookmarkPanelButton"><div class="iconContainer"></div></div>
+              </div>
+  
+              <div class="toolbarButton panelButton downloadButton"><div class="iconContainer"></div></div>
+              <div class="toolbarButton homeButton"><div class="iconContainer"></div></div>
+              <div class="toolbarButtonSeparator firefoxButtonSeparator"></div>
+              <div class="toolbarButton panelButton firefoxButton"><div class="iconContainer"></div></div>
+  
+              <div class="navBarCustomizationModeIndicator"></div>
+            </div>
+            <!-- NavBar [End] -->
+            
+            <!-- Bookmarks Bar [Start] -->
+            <div class="bookmarksBar">
+              <div class="toolbarButton bookmarkFolderItem">
+                <div class="iconContainer"></div>
+                <div class="label">Folder</div>
+                <div class="dropDownArrow"></div>
+              </div>
+    
+              <div class="toolbarButton">
+                <div class="iconContainer"></div>
+                <div class="label">Bookmark</div>
+              </div>
+    
+              <div class="toolbarButton">
+                <div class="iconContainer"></div>
+                <div class="label">Bugzilla</div>
+              </div>
+            </div>
+            <!-- Bookmarks Bar [End] -->
+            
+          </div>
+          <!-- Toolbox [End] -->
+          
+          <!-- ContentArea [Start] -->
+          <div class="contentArea">
+            <div class="popUp-searchResults">
+              <div class="item-searchResult hint">
+                <div class="icon iconType-status"></div>
+                <div class="icon iconType-main"></div>
+                <div class="text-title"><span class="term-emphasis">firefox</span></div>
+                
+<!--
+                <div class="text-title">
+                  <div class="character-f01"><span class="term-emphasis">firefox</span></div>
+                </div>
+-->
+                
+<!--
+                <div class="text-dash">—</div>
+                <div class="text-url">Search</div>
+-->
+
+                <div class="text-dash"></div>
+                <div class="text-url"></div>
+                <div class="tip-container"><span class="emoji">💡</span><strong>Tip</strong>: Results with a magnifying glass are search suggestions. They might be what you're looking for! <span class="emoji">😃</span></div>
+                <a class="settings-link" href="#">Change Settings...</a>
+              </div>
+
+              <!--div class="item-searchResult resultType-visit selected">
+                <div class="icon iconType-status"></div>
+                <div class="icon iconType-main iconType-favicon-firefox-new"></div>
+                <div class="text-title"><span class="term-emphasis">test</span>pilot.firefox.com</div>
+                <div class="text-dash">—</div>
+                <div class="text-url">Visit</div>
+              </div>
+
+              <div class="item-searchResult resultType-history">
+                <div class="icon iconType-status"></div>
+                <div class="icon iconType-main iconType-favicon-firefox-old"></div>
+                <div class="text-title">people.mozilla.org</div>
+                <div class="text-dash">—</div>
+                <div class="text-url">https://people.mozilla.org/~jgruen/<span class="term-emphasis">test</span>-pilot/</div>
+              </div>
+
+              <div class="item-searchResult resultType-bookmark">
+                <div class="icon iconType-status"></div>
+                <div class="icon iconType-main iconType-favicon-bugzilla"></div>
+                <div class="text-title">1054016 - <span class="term-emphasis">Test</span> performance impact of using SVG for Main Toolbar icons:</div>
+                <div class="text-dash">—</div>
+                <div class="text-url">https://bugzilla.mozilla.org/show_bug.cgi?id=1054016</div>
+              </div>
+
+              <div class="item-searchResult resultType-switchToTab">
+                <div class="icon iconType-status"></div>
+                <div class="icon iconType-main iconType-favicon-github"></div>
+                <div class="text-title">johngruen/<span class="term-emphasis">test</span>-pilot-prototype</div>
+                <div class="text-dash">—</div>
+                <div class="text-url">Switch to Tab</div>
+              </div>
+
+              <div class="item-searchResult resultType-bookmark resultType-tagged">
+                <div class="icon iconType-status"></div>
+                <div class="icon iconType-main iconType-favicon-quirksmode"></div>
+                <div class="text-title">HTML5 <span class="term-emphasis">test</span>s - video</div>
+                <div class="text-dash">—</div>
+                <div class="text-url">www.quirksmode.org/html5/<span class="term-emphasis">test</span>s/video.html</div>
+              </div>
+
+              <div class="item-searchResult resultType-bookmark resultType-tagged">
+                <div class="icon iconType-status"></div>
+                <div class="icon iconType-main iconType-faviconGeneric"></div>
+                <div class="text-title">file:///Users/stephen/Desktop/Stuff/font-<span class="term-emphasis">test</span>.html</div>
+                <div class="text-dash">—</div>
+                <div class="text-url">file:///Users/stephen/Desktop/Stuff/font-<span class="term-emphasis">test</span>.html</div>
+              </div>
+
+              <div class="item-searchResult resultType-tagged">
+                <div class="icon iconType-status"></div>
+                <div class="icon iconType-main iconType-faviconGeneric"></div>
+                <div class="text-title">gUM <span class="term-emphasis">Test</span> Page</div>
+                <div class="text-dash">—</div>
+                <div class="text-url">https://mozilla.github.io/webrtc-landing/gum_<span class="term-emphasis">test</span>.html</div>
+              </div>
+
+              <div class="item-searchResult resultType-tagged">
+                <div class="icon iconType-status"></div>
+                <div class="icon iconType-main iconType-favicon-firefox-old"></div>
+                <div class="text-title">System Colors <span class="term-emphasis">Test</span></div>
+                <div class="text-dash">—</div>
+                <div class="text-url">http://people.mozilla.org/~shorlander/system-colors.html</div>
+              </div>
+
+              <div class="item-searchResult resultType-tagged">
+                <div class="icon iconType-status"></div>
+                <div class="icon iconType-main iconType-favicon-firefox-old"></div>
+                <div class="text-title"><span class="term-emphasis">Test</span>ing SVG Icon Filter Recolor</div>
+                <div class="text-dash">—</div>
+                <div class="text-url">http://people.mozilla.org/~shorlander/icons-svg/SVG-Icon-Template-<span class="term-emphasis">Test</span>/svg-icon-template-<span class="term-emphasis">test</span>.html</div>
+              </div>
+
+              <div class="item-searchResult resultType-search">
+                <div class="icon iconType-status"></div>
+                <div class="icon iconType-main"></div>
+                <div class="text-title"><span class="term-emphasis">test</span> my speed</div>
+                <div class="text-dash"></div>
+                <div class="text-url"></div>
+              </div-->
+            </div>
+          </div>
+          <!-- ContentArea [End] -->
+        <!-- InnerContainer [End] -->
+
+      </div>
+      <!-- OuterContainer [End] -->
+
+    </div>
+    <!-- Window [End] -->
+
+    <script>
+      
+      /*--- Focus Location/Search Fields ---*/
+      $(".locationBar div.urlText").focus(function() {
+        $("div.locationBar").toggleClass("focus"); 
+      });
+      $(".locationBar div.urlText").blur(function() {
+        $("div.locationBar").toggleClass("focus"); 
+      });
+      $(".searchBar .searchText").focus(function() {
+        $("div.searchBar").toggleClass("focus"); 
+      });
+      $(".searchBar .searchText").blur(function() {
+        $("div.searchBar").toggleClass("focus"); 
+      });
+
+      $( document ).ready(function() {
+        $(".locationBar div.urlText").focus();
+      });
+
+
+      /*--- Tab Separators ---*/
+      $(".tab").mouseover(function() {
+        $(this).prev(".tabSeparator").addClass("tabSeparatorHidden"); 
+        $(this).next(".tabSeparator").addClass("tabSeparatorHidden"); 
+      });
+      $(".tab").mouseout(function() {
+        $(this).prev(".tabSeparator").removeClass("tabSeparatorHidden"); 
+        $(this).next(".tabSeparator").removeClass("tabSeparatorHidden"); 
+      });
+
+
+      /*--- Bookmarking Animation/Removal ---*/
+      $(".bookmarkStarButton").mouseup(function() {
+        $("div.menuPanel").removeClass("transition");
+        $("div.firefoxButton").removeClass("open");
+        $("div.bookmarksMenuPanel").removeClass("transition");
+        $("div.bookmarkPanelButton").removeClass("open");
+        $("div.downloadsPanel").removeClass("transition");
+        $("div.downloadButton").removeClass("open");
+
+        if ($(".bookmarkStarButton").hasClass("bookmarked")) {
+          $(this).toggleClass("open");
+          $("div.bookmarkEditingPanel").toggleClass("transition");
+          $("div.bookmarksWidget").toggleClass("open");
+        } else {
+          $(this).toggleClass("bookmarked");
+          $(".bookmarkingAnimation").toggleClass("transition");
+          setTimeout(function(){ $(".bookmarkPanelButton").addClass("bookmarked");}, 600);
+          setTimeout(function(){ $(".bookmarkPanelButton").removeClass("bookmarked");}, 2400);
+        }
+      });
+
+      $(".removeBookmarkButton").mouseup(function() {
+        $(".bookmarkStarButton").toggleClass("bookmarked");
+        $(".bookmarkStarButton").toggleClass("open");
+        $(".bookmarkingAnimation").toggleClass("transition");
+        $(".bookmarkPanelButton").removeClass("bookmarked");
+        $("div.bookmarksWidget").toggleClass("open");
+        $("div.bookmarkEditingPanel").toggleClass("transition");
+      });
+      
+
+      /*--- Toggleable Items ---*/
+       $(".panel-menuItem.toggleable").mouseup(function() {
+         $(this).toggleClass("toggled");
+       });      
+
+      $(".bookmarksViewBookmarksToolbar").mouseup(function() {
+        $(".toolbox").toggleClass("bookmarksBar-enabled");
+        $(".bookmarksBar").toggleClass("bookmarksBar-enabled");
+        $(".firefoxButtonSeparator").toggleClass("bookmarksBar-enabled");
+      });
+      
+
+      /*--- Download Panel Status Text ---*/
+      $(".downloadItem-actionButton-primary").mouseover(function() {
+        $(this).parent(".downloadInProgress").find( ".downloadStatus" ).text( "Open when finished downloading" );
+        $(this).parent(".downloadComplete").find( ".downloadStatus" ).text( "Open file" );
+        $(this).parent(".downloadMissing").find( ".downloadStatus" ).text( "File moved or missing" );
+        $(this).parent(".downloadPaused").find( ".downloadStatus" ).text( "Resume download" );
+      });
+
+      $(".downloadItem-actionButton-secondary").mouseover(function() {
+        $(this).parent(".downloadInProgress").find( ".downloadStatus" ).text( "Cancel download" );
+        $(this).parent(".downloadComplete").find( ".downloadStatus" ).text( "Show in Explorer" );
+        $(this).parent(".downloadMissing").find( ".downloadStatus" ).text( "Show download information" );
+        $(this).parent(".downloadCancelled").find( ".downloadStatus" ).text( "Retry download" );
+        $(this).parent(".downloadPaused").find( ".downloadStatus" ).text( "Cancel download" );
+      });
+      $(".downloadItem-actionButton-primary, .downloadItem-actionButton-secondary").mouseout(function() {
+        $(this).parent(".downloadInProgress").find( ".downloadStatus" ).text( "59h 59m 59s rem. — 1022/1023 (999.9 kB/s)" );
+        $(this).parent(".downloadComplete").find( ".downloadStatus" ).text( "mozilla.org — 1:25 PM" );
+        $(this).parent(".downloadMissing").find( ".downloadStatus" ).text( "mozilla.org — 1:35 PM" );
+        $(this).parent(".downloadCancelled").find( ".downloadStatus" ).text( "Cancelled — mozilla.org — 1:35 PM" );
+        $(this).parent(".downloadPaused").find( ".downloadStatus" ).text( "Paused — 1:35 PM" );
+      });
+
+
+      /*--- Panel Activation ---*/
+      $("div.identityBlock").mouseup(function() {
+        $("div.menuPanel").removeClass("transition");
+        $("div.firefoxButton").removeClass("open");
+        $("div.bookmarksMenuPanel").removeClass("transition");
+        $("div.bookmarkPanelButton").removeClass("open");
+        $("div.bookmarksWidget").removeClass("open");
+        $("div.downloadsPanel").removeClass("open");
+
+        $("div.panel-siteIdentity-default").toggleClass("transition");
+        $("div.identityBlock").toggleClass("open");
+      });      
+
+      $("div.bookmarkPanelButton").mouseup(function() {
+        $("div.menuPanel").removeClass("transition");
+        $("div.firefoxButton").removeClass("open");
+        $("div.bookmarkEditingPanel").removeClass("transition");
+        $("div.bookmarkStarButton").removeClass("open");
+        $("div.downloadsPanel").removeClass("transition");
+        $("div.downloadButton").removeClass("open");
+
+        $("div.bookmarksMenuPanel").toggleClass("transition");
+        $("div.bookmarkPanelButton").toggleClass("open");
+        $("div.bookmarksWidget").toggleClass("open");
+      });      
+
+      /* Bookmark Editing Cancel/Close */
+      $(".cancelButton, .doneButton").mouseup(function() {
+        $("div.bookmarkStarButton").toggleClass("open");
+        $("div.bookmarkEditingPanel").toggleClass("transition");
+        $("div.bookmarksWidget").toggleClass("open");
+      });
+
+      $("div.downloadButton").mouseup(function() {
+        $("div.menuPanel").removeClass("transition");
+        $("div.firefoxButton").removeClass("open");
+        $("div.bookmarksMenuPanel").removeClass("transition");
+        $("div.bookmarkPanelButton").removeClass("open");
+        $("div.bookmarksWidget").removeClass("open");
+
+        $("div.downloadsPanel").toggleClass("transition");
+        $("div.downloadButton").toggleClass("open");
+      });      
+
+      $("div.firefoxButton").mouseup(function() {
+        $("div.downloadsPanel").removeClass("transition");
+        $("div.downloadButton").removeClass("open");
+        $("div.bookmarksMenuPanel").removeClass("transition");
+        $("div.bookmarkPanelButton").removeClass("open");
+        $("div.bookmarksWidget").removeClass("open");
+
+        $("div.menuPanel").toggleClass("transition");
+        $("div.firefoxButton").toggleClass("open");
+      });
+
+
+      /*--- Customization Mode Activation ---*/
+      $("div.customizeButton").mouseup(function() {
+        $("div.windowOuterContainer").toggleClass("customizeMode");
+        $("div.window").toggleClass("customizeMode");
+        $("div.toolbarCustomizeModeSpacer").toggleClass("customizeMode");
+        $("div.navBarCustomizationModeIndicator").toggleClass("customizeMode");
+        $("div.combinedNavigationWidget").toggleClass("customizeMode");
+        $("div.searchBar").toggleClass("customizeMode");
+        $(".searchText").toggleClass("customizeMode");
+        $(".toolbarButton").toggleClass("customizeMode");
+        $(".menuPanel-gridItem").toggleClass("customizeMode");
+/*         $("div.firefoxButton").toggleClass("customizeMode"); */
+        $("div.menuPanel").toggleClass("customizeMode");
+        $(".menuPanel div.panel-row.empty").toggleClass("customizeMode");
+        $(".menuPanel div.panel-bottomRow").toggleClass("customizeMode");
+
+        if ($(".menuPanel div.panel-bottomRow").hasClass("customizeMode")) {
+          $("div.customizeButton .label").replaceWith( "<div class='label'>Exit Customize</div>" );
+            } else {
+          $("div.customizeButton .label").replaceWith( "<div class='label'>Customize</div>" );
+        }
+                
+        $("div.customizationIncontentUI").toggleClass("customizeMode");
+        $(".tab.mozilla").toggleClass("active");
+
+        $(".customizeTab").prev(".tabSeparator").toggleClass("tabSeparatorHidden"); 
+        $(".customizeTab").next(".tabSeparator").toggleClass("tabSeparatorHidden"); 
+
+        $(".customizeTab").toggleClass("active");
+     }); 
+
+
+      /*--- SubViews ---*/
+      /* History */
+      $(".panel-gridItem.historyButton").mouseup(function() {
+        $(".menuPanel").toggleClass("subView-history");
+        $(".menuPanel .panel-gridItem.historyButton").toggleClass("open");
+        $(".menuPanel div.panel-row.empty").toggleClass("subViewMode");
+        $(".menuPanel-contentContainer").toggleClass("shifted");
+        $(".menuPanel .panel-gridItem").toggleClass("disabled");
+        $(".menuPanel .panel-splitButton").toggleClass("disabled");
+        $(".menuPanel .panel-bottomRow-button").toggleClass("disabled");
+        $(".menuPanel-subViewContainer").toggleClass("toggled");
+      });
+    </script>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+

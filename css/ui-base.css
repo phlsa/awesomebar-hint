@@ -1,0 +1,1683 @@
+/* ====================== */
+/* ------Variables------- */
+/* ====================== */
+
+:root {
+  --color-grey-lightest: #fbfbfb;
+  --color-grey-lighter: #ebebeb;
+  --color-grey-light: #d4d4d4;
+  --color-grey: #b1b1b1;
+  --color-grey-dark: #858585;
+  --color-grey-disabled: #999999;
+  
+  --color-blue: #0996f8;
+  --color-blue-dark: #0670cc;
+  --color-blue-darker: #005bab;
+  --color-blue-darkest: #004480;
+  
+  --color-blue-focusRing: hsla(208,100%,69%,.75);
+
+  --border-radius-outer: 4px;
+  --border-radius-inner: 3px;
+
+
+  --color-panel-background: hsla(0,0%,99%,1);  
+  --color-panel-separator: hsla(0,0%,0%,.15);  
+
+  --color-panel-hover-background: hsla(0,0%,0%,.06);
+  --color-panel-active-background: hsla(0,0%,0%,.1);
+  --color-panel-border: hsla(0,0%,0%,.1);
+}
+
+
+/* ====================== */
+/* ---Image Preloading--- */
+/* ====================== */
+
+.imagePreloader {
+  width: 0px;
+  height: 0px;
+}
+
+
+/* ====================== */
+/* ------UI Styles------- */
+/* ====================== */
+
+/* --Window-- */
+.window {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  
+  width: 90%;
+  min-width: 948px;
+  min-height: 300px;
+  max-height: 700px;
+
+  margin: 20px 0 40px;
+
+  background-color: hsl(0,0%,90%);
+
+  box-shadow: 0 0 0 1px hsla(0,0%,0%,.2),
+              0 16px 40px hsla(0,0%,0%,.6),
+              0 1px 0 rgba(255,255,255,.5) inset;
+
+  color: black;
+  font-family: sans-serif;
+}
+
+
+
+
+/* --Titlebar and Widgets-- */
+.titleBar {
+  display: flex;
+  width: 100%;
+  height: 20px;
+  overflow: hidden;
+}
+
+.titleBarSpacer {
+  flex: 1;
+}
+
+.windowControls {
+  position: relative;
+  display: flex;
+  margin: 1px 7px 0 0;
+  z-index: 99999;
+}
+
+.widget {
+  width: 25px;
+  margin-right: 1px;
+}
+.widget:last-child {
+  margin-right: 0;
+}
+
+
+
+/* --OuterContainer-- */
+.windowOuterContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  margin: 0 6px 6px;
+  z-index: 199;
+  transition-duration: 250ms;
+}
+
+
+
+/* --Tabs-- */
+.tabBar {
+  position: relative;
+  display: flex;
+  margin: -4px 0 0;
+  width: 100%;
+  height: 32px;
+}
+
+.tab {
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  padding: 0 25px;
+  min-width: 180px;
+  max-width: 180px;
+  margin-left: -17px;
+  -moz-user-select:none;
+  cursor: default;
+}
+.tab:first-child {
+  margin-left: 0;
+}
+
+.tab.appTab,
+.tab.newTab {
+  width: 16px;
+  min-width: 16px;
+}
+
+.tab:hover {
+  background-image: url("../images-win8/tabBackgroundStart.png"),
+                    url("../images-win8/tabBackgroundMiddle.png"),
+                    url("../images-win8/tabBackgroundEnd.png");
+  background-repeat: no-repeat,
+                     no-repeat,
+                     no-repeat;
+  background-position: left,
+                       32px,
+                       right;
+  background-size: 32px 32px,
+                   -moz-calc(100% - 64px) 32px,
+                   32px 32px;
+}
+
+.tab.active {
+  position: relative;
+  background-image: url("../images-win8/tabActiveStart.png"),
+                    url("../images-win8/tabActiveMiddle.png"),
+                    url("../images-win8/tabActiveEnd.png");
+  background-repeat: no-repeat,
+                     no-repeat,
+                     no-repeat;
+  background-position: left,
+                       32px,
+                       right;
+  background-size: 32px 32px,
+                   -moz-calc(100% - 64px) 32px,
+                   32px 32px;
+  z-index: 399;
+}
+
+
+.tab > .favicon {
+  margin-right: 4px;
+  width: 16px;
+  height: 16px;
+  background-image: url("../images-general/favicon-default.png");
+  opacity: .9;
+}
+.tab.appTab > .favicon,
+.tab.newTab > .favicon {
+  margin-right: 0;
+}
+
+.tab > .label {
+  flex: 1;
+  height: 16px;
+  color: #030e1a;
+  font-size: 12px;
+  line-height: 16px;
+  overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+  opacity: .9;
+}
+
+.tab .close {
+  width: 16px;
+  height: 16px;
+  background-image: url("../images-win8/close.png");
+  background-size: auto 16px;
+  background-position: 0 0;
+  opacity: .8;
+}
+.tab:hover .close,
+.tab.active .close {
+  opacity: 1;
+  transition: opacity linear 150ms;
+}
+
+.tab .close:hover {
+  background-position: -16px 0;
+}
+.tab .close:hover:active {
+  background-position: -32px 0;
+}
+
+.tabSeparator {
+  width: 3px;
+  height: 32px;
+  background-image: url("../images-win8/tabSeparator.png");
+  background-repeat: no-repeat;
+  background-position: center 1px;
+  margin-left: -16px;
+}
+.tabSeparatorHidden {
+  width: 3px;
+  height: 32px;
+  margin-left: -16px;
+  background-image: none;
+}
+
+/* Tab Favicon/Icon Rules */
+.tab.cupcakesDashboard .favicon { background-image: url("../images-general/favicon-cupcakesDashboard.svg"); }
+.tab.chromaticPixel .favicon { background-image: url("../images-general/favicon-chromaticPixel.png"); }
+.tab.mozilla .favicon { background-image: url("../images-general/favicon-mozilla.png"); }
+.tab.newTabPage .favicon { background-image: url("../images-win8/favicon-newTab.png"); }
+.tab.customizeTab .favicon { background-image: url("../images-win8/favicon-customize.png"); }
+.tab.loading .favicon { background-image: url("../images-general/spinner-connecting.png"); }
+
+.tab.newTab .favicon { background-image: url("../images-win8/toolbarButton-newTab.png"); }
+
+
+
+/* --InnerContainer-- */
+.innerContainer {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  width: 100%;
+  margin-top: -2px;
+  z-index: 299;
+}
+
+
+
+/* --Toolbox (Containes Toolbars e.g. NavBar and BookmarksBar-- */
+.toolbox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 41px;
+  margin-top: -2px;
+  background: #f8f8f8;
+  border-bottom: 1px solid hsl(0,0%,80%);
+  box-shadow: 0 -1px 0 0 hsla(0,0%,0%,.3);
+  transition-property: height;
+  transition-duration: 150ms;
+  z-index: 99;
+}
+.toolbox.bookmarksBar-enabled {
+  height: 65px;
+}
+
+
+
+/* --NavBar-- */
+.navBar {
+  position: relative;
+  display: flex;
+  flex: 1 0 auto;
+  align-items: center;
+  height: 40px;
+  background: #f8f8f8;
+  background-clip: border-box;
+  z-index: 599;
+}
+
+.navBarSpacer,
+.toolbarSpacer {
+  flex: 1 1 auto;
+}
+
+.navBarCustomizationModeIndicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 2px;
+  width: calc(100% - 49px);
+  height: calc(100% - 4px);
+  background-color: hsla(0,0%,100%,.5);
+  border: 1px dashed hsla(0,0%,0%,.5);
+  border-radius: 2px;
+  z-index: 39;
+  opacity: 0;
+  transition-duration: 250ms;
+}
+
+
+
+/* --Toolbar Items-- */
+.toolbarButton {
+  display: flex;
+  padding: 0 6px;
+  margin: 0 2px;
+  min-width: 16px;
+  height: 26px;
+  background-clip: padding-box;
+  border: 1px solid hsla(0,0%,0%,0);
+  border-radius: 2.5px;
+  -moz-user-select: none;
+  cursor: default;
+  transition-property: background-color, border-color;
+  transition-duration: 0;
+  z-index: 49;
+}
+.toolbarButton:not(.splitButton):not(.open):hover {
+  background-color: hsla(0,0%,100%,.3);
+  border: 1px solid hsla(0,0%,0%,.3);
+  box-shadow: 0 1px 0 hsla(0,0%,100%,.5),
+              0 1px 0 hsla(0,0%,100%,.5) inset;
+  transition-duration: 250ms;
+}
+.toolbarButton:not(.splitButton):not(.open):hover:active {
+  background-color: hsla(0,0%,0%,.1);
+  border: 1px solid hsla(0,0%,0%,.3);
+  box-shadow: 0 1px 0 hsla(0,0%,100%,.5),
+              0 1px 0 hsla(0,0%,0%,.1) inset;
+  transition-duration: 0ms;
+}
+
+.toolbarButton:not(.splitButton) {
+  align-items: center;
+  justify-content: center;
+}
+
+.toolbarButton:not(.splitButton).open {
+  background-color: hsla(0,0%,0%,.1);
+  background-clip: border-box;
+  border: 1px solid hsla(0,0%,0%,.3);
+  box-shadow: 0 1px 0 hsla(0,0%,100%,.5),
+              0 1px 0 hsla(0,0%,0%,.1) inset;
+}
+.toolbarButton.open:not(.splitButton):hover:active {
+  background-color: hsla(0,0%,0%,.2);
+}
+
+.toolbarButton.backButton {
+  position: relative;
+  margin: 0 8px 0 4px;
+  width: 32px;
+  height: 32px;
+  background-color: hsl(0,0%,98%);
+  border-radius: 100%;
+  border: 1px solid hsla(0,0%,70%,1);
+  box-shadow: none;
+  -moz-user-select: none;
+  cursor: default;
+  z-index: 99;
+}
+.toolbarButton:not(.splitButton):not(.open).backButton:hover {
+  background-color: hsl(0,0%,100%);
+}
+.toolbarButton:not(.splitButton):not(.open).backButton:hover:active {
+  background-color: #d7d7d7;
+  border: 1px solid hsla(0,0%,60%,1);
+  box-shadow: 0 1px 0 0 hsla(210,4%,10%,.1) inset;
+}
+
+.firefoxButton {
+  position: relative;
+  margin-right: 4px;
+}
+.firefoxButtonSeparator {
+  width: 1px;
+  height: 100%;
+  margin: 0 4px;
+  background-color: hsla(210,4%,10%,.15);
+  z-index: 49;
+}
+.firefoxButtonSeparator.bookmarksBar-enabled {
+  background: linear-gradient(hsla(210,4%,10%,.15) 50%, hsla(210,4%,10%,0))
+}
+
+.toolbarButton > .iconContainer {
+  width: 16px;
+  height: 16px;
+  background-image: url("../images-win8/toolbarButton-placeholder.png");
+  background-size: auto 16px;
+}
+
+
+/* Split Toolbar Buttons */
+.toolbarButton.splitButton {
+  padding: 0;
+}
+.toolbarButton.splitButton:hover,
+.toolbarButton.splitButton.open {
+  border: 1px solid hsla(0,0%,0%,.3);
+  box-shadow: 0 1px 0 hsla(0,0%,100%,.5);
+}
+
+.toolbarButton.splitButton > .toolbarButton {
+  position: relative;
+  height: auto;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 1px 0 hsla(0,0%,100%,.1) inset;
+}
+.toolbarButton.splitButton > .toolbarButton:hover {
+  border: 0;
+  box-shadow: 0 1px 0 hsla(0,0%,100%,.1) inset;
+}
+.toolbarButton.splitButton > .toolbarButton:hover:active {
+  border: 0;
+  box-shadow: 0 1px 0 hsla(0,0%,0%,.1) inset;
+}
+
+.toolbarButton.splitButton > .toolbarButton.open {
+  margin: -1px;
+  padding: 0 7px;
+  box-shadow: 0 2px 0 hsla(0,0%,0%,.1) inset;
+}
+
+.toolbarButton.splitButton > .toolbarButton:first-child { border-radius: 1.5px 0 0 1.5px; } 
+.toolbarButton.splitButton > .toolbarButton:last-child  { border-radius: 0 1.5px 1.5px 0; }
+
+.toolbarButton.splitButton > .toolbarButtonSeparator {
+  width: 1px;
+  margin: 4px 0;
+  background-color: hsla(0,0%,0%,.3);
+  border: 0;
+  transition-property: margin;
+  transition-duration: 10ms;
+  transition-timing-function: ease;
+  z-index: 99;
+} 
+.toolbarButton.splitButton.open > .toolbarButtonSeparator,
+.toolbarButton.splitButton:hover > .toolbarButtonSeparator {
+  margin: 0 0;
+  background-color: hsla(0,0%,0%,.3);
+  border: 0;
+} 
+
+/* Icons - Toolbar Items */
+.toolbarButton.backButton > .iconContainer { background-image: url('../images-osx-yosemite/navigation-back-large.svg'); }
+
+.toolbarButton.bookmarkStarButton > .iconContainer { background-image: url('../images-win8/toolbarButton-bookmarkUnstarred.png'); }
+.toolbarButton.bookmarkStarButton.bookmarked > .iconContainer { background-image: url('../images-win8/toolbarButton-bookmarkStarred.png'); }
+.toolbarButton.bookmarkPanelButton > .iconContainer { background-image: url('../images-win8/toolbarButton-bookmarkPanel.png'); }
+
+.toolbarButton.homeButton > .iconContainer { background-image: url('../images-win8/toolbarButton-home.png'); }
+.toolbarButton.historyButton > .iconContainer { background-image: url('../images-win8/toolbarButton-history.png'); }
+.toolbarButton.downloadButton > .iconContainer { background-image: url('../images-win8/toolbarButton-download.png'); }
+
+.toolbarButton.firefoxButton > .iconContainer { background-image: url('../images-win8/toolbarButton-customize.png'); }
+
+
+/* Location and Search Fields */
+.combinedNavigationWidget {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;  
+}
+
+.locationBar,
+.searchBar {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  height: 26px;
+  margin: 0 6px 0 0;
+  -moz-padding-start: 12px;
+  -moz-padding-end: 0;
+  background-color: hsla(0,0%,100%,.9);
+  border: 1px solid transparent;
+  border-color: hsla(210,54%,20%,.25);
+  box-shadow: 0 1px 0 hsla(0,0%,0%,.01) inset,
+              0 1px 0 hsla(0,0%,100%,.1);
+  color: #808080;
+  font-size: 13px;
+  line-height: 21px;
+  outline-style: none;
+  z-index: 49;
+  opacity: .8;
+  transition-duration: 200ms;
+}
+
+.toolbarButton.backButton + .locationBar {
+  -moz-margin-start: -20px;
+}
+
+.searchBar:hover,
+.locationBar:hover {
+  opacity: .9;
+}
+
+.searchBar.focus:not(.customizeMode),
+.locationBar.focus {
+  background-color: hsla(0,0%,100%,1);
+  border-color: #4595e5;
+  opacity: 1;
+}
+
+.urlText {
+	flex: 1;
+  color: #808080;
+  font-size: 15px;
+  outline-style: none;
+  cursor: text;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.urlText:focus {
+  color: #1a1a1a;
+}
+
+.domainName {
+  color: #1a1a1a;
+}
+
+.identityBlock {
+  display: flex;
+  height: 100%;
+  -moz-padding-start: 6px;
+  -moz-padding-end: 4px;
+  color: #e57300;
+  font-size: 13px;
+  line-height: 22px;
+  -moz-user-select: none;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.identityBlockSeparator {
+  -moz-margin-end: 4px;
+  min-width: 1px;
+  height: 18px;
+  background-color: hsla(0,0%,0%,.2);
+  opacity: 1;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
+  z-index: 99;
+}
+.locationBar:hover > .identityBlockSeparator {
+  opacity: 1;
+}
+.locationBar:hover > .identityBlock:hover + .identityBlockSeparator {
+  height: 100%;
+}
+
+.identityBlock > .iconContainer {
+  width: 16px;
+  height: 100%;
+/*   background-color: blue; */
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+.identityBlock:hover > .iconContainer {
+  background-position: center center;
+}
+.identityBlock:hover:active > .iconContainer,
+.identityBlock.open > .iconContainer {
+  background-position: right center;
+}
+
+.identityBlock.stateDefault > .iconContainer { background-image: url("../images-general/glyph-info-16.svg"); }
+
+.identityBlock.stateSearch > .iconContainer { background-image: url("../images-osx-yosemite/icon-search.svg#search-icon"); }
+
+
+.stopGoReload {
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  height: 100%;
+  -moz-user-select:none;
+  cursor: default;
+  font-size: 0;
+  line-height: 0;
+}
+.stopGoReload:hover {
+}
+.stopGoReload:hover:active {
+}
+
+.stopGoReload > .iconContainer {
+  width: 16px;
+  height: 16px;
+  background-image: url("../images-win8/reloadStopGo-reload.png");
+  background-position: center center;
+}
+.stopGoReload:hover > .iconContainer {
+  background-image: url("../images-win8/reloadStopGo-reload-hoverActive.png");
+}
+
+.searchBar {
+  max-width: 180px;
+  -moz-padding-start: 6px;
+}
+
+.searchIndicator {
+  display: flex;
+  height: 100%;
+  -moz-margin-end: 4px;
+}
+
+
+.searchText {
+	flex: 1;
+	height: 100%;
+  background-color: transparent;
+  border: none;
+  font-size: 15px;
+  outline-style: none;
+  cursor: text;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.searchText::-moz-placeholder {
+  font-style: italic;
+}
+
+.searchIndicator > .iconContainer {
+  width: 16px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-image: url("../images-osx-yosemite/icon-search.svg#search-icon");
+}
+.searchIndicator:hover > .iconContainer {
+}
+.searchIndicator:hover:active > .iconContainer {
+}
+
+.searchGo {
+  display: flex;
+  height: 100%;
+  -moz-padding-start: 6px;
+  -moz-padding-end: 6px;
+}
+
+.searchGo > .iconContainer {
+  width: 16px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+
+
+
+
+
+
+
+/* --Bookmarks Bar-- */
+.bookmarksBar {
+  position: relative;
+  display: flex;
+  height: 24px;
+  padding: 0 4px 4px;
+  opacity: 0;
+  transform: translateY(-16px);
+  transition-property: transform, opacity;
+  transition-duration: 250ms;
+  transition-delay: 0;
+}
+.bookmarksBar.bookmarksBar-enabled {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 50ms;
+}
+
+.bookmarksBar .toolbarButton {
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  min-width: none;
+  height: 20px;
+  padding: 1px 4px;
+  margin: 0 4px 0 0;
+}
+
+.bookmarksBar .toolbarButton > .iconContainer {
+  margin-right: 4px;
+  background-image: url("../images-win8/favicon-generic.png");
+}
+.bookmarksBar .toolbarButton.bookmarkFolderItem > .iconContainer {
+  background-image: url("../images-win8/bookmarkPanel-icon-folder.png");
+}
+
+.bookmarksBar .toolbarButton > .label {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.dropDownArrow {
+  width: 16px;
+  height: 16px;
+  background-image: url("../images-win8/dropdownArrow.png");
+}
+
+
+
+/* --Panels-- */
+.panel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 26px;
+  width: 256px;
+  padding: 4px;
+  background-color: hsla(0,0%,100%,1);
+  background-clip: padding-box;
+  border: 1px solid hsla(210,4%,10%,.2);
+  box-shadow: 0 3px 5px hsla(210,4%,10%,.1),
+              0 0 7px hsla(210,4%,10%,.1);
+  color: #222426;
+  opacity: 0;
+  z-index: 999;
+  transition-duration: 250ms;
+  -moz-user-select: none;
+  cursor: default;
+  visibility: hidden;
+}
+
+.panel-arrowUp {
+  position: absolute;
+  margin-top: -17px;
+  height: 14px;
+  width: 100%;
+  background-image: url("../images-win8/menuPanel-arrowUp.png");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 40px) top;
+  pointer-events: none;
+}
+
+
+/* Panel Items */
+.panel-item {
+  border: 1px solid transparent;
+/*   transition-duration: 150ms; */
+/*   transition-property: background, background-color, border; */
+  -moz-user-select: none;
+  cursor: default;
+}
+.panel-item:hover {
+  background-color: hsla(210,4%,10%,.08);
+  border-color: hsla(210,4%,10%,.1);
+}
+.panel-item:not(.panel-splitButton):not(.bookmarkFolderItem):hover:active {
+  background-color: hsla(210,4%,10%,.15);
+  border-color: hsla(210,4%,10%,.15);
+  box-shadow: 0 1px 0 0 hsla(210,4%,10%,.05) inset;
+}
+/*
+.panel-item.toggled {
+  background-color: hsla(210,4%,10%,.1);
+  border-color: hsla(210,4%,10%,.15);
+  box-shadow: 0 1px 0 0 hsla(210,4%,10%,.02) inset;
+}
+*/
+.panel-item.open {
+  background-color: #177ee5;
+  border: 1px solid hsla(210,80%,20%,.1);
+  box-shadow: 0 1px 0 0 hsla(210,80%,20%,.1) inset;
+  color: white;
+}
+.panel-item:not(.panel-splitButton):not(.bookmarkFolderItem).open:hover:active {
+  background-color: #0f5499;
+}
+
+
+.panel .label,
+.panel .label-keyboardShortcut {
+  font-size: 12px;
+}
+
+
+.panel-item.panel-splitButton {
+  display: flex;
+  height: 36px;
+}
+.panel-item.panel-splitButton:hover {
+  background-color: hsla(210,4%,10%,.04);
+}
+
+.panel-splitButtonSegment {
+  position: relative;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: -1px;
+  border: none;
+  transition-duration: 150ms;
+  transition-property: background-color;
+}
+.panel-splitButtonSegment:hover {
+  background-color: hsla(210,4%,10%,.04);
+}
+.panel-splitButtonSegment:hover:active {
+  background-color: hsla(210,4%,10%,.15);
+  box-shadow: 0 2px 0 0 hsla(210,4%,10%,.1) inset;
+}
+
+.panel-buttonSeparator {
+  margin: 7px 0px;
+  width: 1px;
+  min-width: 1px;
+  height: auto;
+  background-color: hsla(210,4%,10%,.15);
+}
+
+.panel-splitButton:hover .panel-buttonSeparator {
+  margin: 0;
+  transition-property: margin;
+  transition-duration: 10ms;
+  transition-timing-function: ease;
+}
+
+.panel-splitButton .iconContainer {
+  width: 16px;
+  height: 100%;
+  margin-right: 6px;
+  background-image: url("../images-win8/toolbarButton-placeholder.png");
+  background-repeat: no-repeat;
+  background-size: auto 16px;
+  background-position: center center;
+}
+
+
+/* Panel Rows/Grid */
+.panel-row {
+  display: flex;
+  justify-content: space-around;
+  margin: 4px 4px;
+  height: 72px;
+}
+
+.panel-gridRowTop {
+  margin-top: 8px;
+}
+.menuPanel .panel-bottomRow {
+  margin-top: 4px;
+}
+
+.panel-gridItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 0 auto;
+/*   width: 72px; */
+  width: 33%;
+  height: 72px;
+  padding: 0 4px;
+  -moz-user-select: none;
+  cursor: default;
+}
+.panel-gridItem.open {
+  background-image: url("../images-win8/pageover-Arrow-toggled.png");
+  background-position: 60px center;
+  background-repeat: no-repeat;
+}
+
+.panel-gridItem > .iconContainer {
+  margin: 6px auto 4px;
+  height: 32px;
+  width: 32px;
+  background-repeat: no-repeat;
+  background-size: auto 32px;
+  background-position: center center;
+}
+
+.panel-gridItem > .label {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  line-height: 13px;
+}
+
+.panel-row.empty {
+  display: none;
+  opacity: 0;
+  transition-duration: 250ms;
+}
+.panel-gridItem.empty {
+  background-color: hsla(0,0%,100%,.3);
+  border: 1px dashed hsla(210,4%,10%,.5);
+}
+
+.expanderRow {
+  flex: 1 0 auto;
+}
+
+
+.panel-rowSeparator {
+  margin: -1px 0;
+  height: 1px;
+  min-height: 1px;
+  background-color: hsla(210,4%,10%,.15);
+}
+
+.panel-rowSeparator.panel-headerSeparator {
+  margin: 4px -4px;
+  height: 1px;
+  min-height: 1px;
+  background-color: hsla(210,4%,10%,.15);
+}
+
+
+.panel-bottomRow {
+  color: hsl(0,0%,30%);
+  display: flex;
+  margin: 4px -4px -4px;
+/*   height: 47px; */
+  height: 41px;
+  background-color: hsla(210,4%,10%,.07);
+  box-shadow: 0 1px 0 hsla(210,4%,10%,.14) inset;
+}
+
+.panel-bottomRow-button {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  align-content: center;
+  margin: 0 -1px 0;
+  padding: 0 12px;
+  transition-duration: 150ms;
+  transition-property: background-color;
+}
+.panel-bottomRow-button:hover {
+  background-color: hsla(210,4%,10%,.05);
+}
+.panel-bottomRow-button:hover:active {
+  background-color: hsla(210,4%,10%,.1);
+  box-shadow: 0 2px 0 0 hsla(210,4%,10%,.1) inset;
+}
+
+.panel-bottomRow:hover .panel-buttonSeparator {
+  margin: 0;
+  transition-property: margin;
+  transition-duration: 10ms;
+  transition-timing-function: ease;
+}
+
+.panel-bottomRow-button > .iconContainer {
+  margin-right: 6px;
+  width: 16px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: auto 16px;
+  background-position: center center;
+}
+.panel-bottomRow-button > .label {
+  line-height: 40px;
+}
+.panel-bottomRow-button > .label-keyboardShortcut {
+  margin-left: 10px;
+  font-size: 12px;
+  line-height: 40px;
+  color: hsl(0,0%,50%);
+}
+
+
+.panel-menuItem {
+  position: relative;
+  display: flex;
+  padding: 2px 6px;
+}
+
+.panel-menuItem > .label {
+  flex: 1 1 auto;
+  font-size: 12px;
+  line-height: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.panel-menuItem > .label-keyboardShortcut {
+  color: hsl(0,0%,50%);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.subpanelDisclosureArrow {
+  width: 16px;
+  height: 16px;
+  background-image: url("../images-win8/menu-discolureArrow.png");
+}
+
+
+/* Panel Header */
+.panel-header {
+  display: flex;
+  padding: 8px;
+}
+
+.panel-header-icon > .iconContainer {
+  width: 48px;
+  height: 48px;
+  margin-right: 12px;
+}
+
+.panel-header-content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+.panel-header-content > .label {
+  flex: 1 1 auto;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.panel .button,
+.panel .dropDown {
+  flex: 1 1 auto;
+  height: 24px;
+  padding: 0 6px;
+  background-color: hsla(210,4%,10%,.08);
+  border: 1px solid hsla(210,4%,10%,.1);
+  font-size: 11px;
+  line-height: 20px;
+  text-align: center;
+}
+.panel .button:hover,
+.panel .dropDown:hover {
+  background-color: hsla(210,4%,10%,.12);
+  border-color: hsla(210,4%,10%,.12);
+}
+.panel .button:hover:active,
+.panel .dropDown:hover:active {
+  background-color: hsla(210,4%,10%,.15);
+  border-color: hsla(210,4%,10%,.15);
+  box-shadow: 0 1px 0 0 hsla(210,4%,10%,.05) inset;
+}
+
+.panel .dropDown {
+  display: flex;
+  justify-content: center;
+  padding-right: 4px;
+  text-align: left;
+}
+.panel .dropDown > .iconContainer {
+  width: 16px;
+  height: 100%;
+  margin-right: 6px;
+  background-image: url("../images-win8/bookmarkPanel-icon-unsortedBookmarks.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.panel .dropDown > .label {
+  flex: 1 1 auto;
+  text-align: left;
+}
+.panel .dropDown > .dropDownArrow {
+  height: 100%;
+  background-position: center center;
+}
+
+.panel .formField {
+  width: 100%;
+  height: 24px;
+  padding: 0 6px;
+  background-color: hsla(0,0%,100%,.9);
+  border: 1px solid hsla(210,54%,20%,.25);
+  box-shadow: 0 1px 0 hsla(0,0%,0%,.01) inset,
+              0 1px 0 hsla(0,0%,100%,.1);
+  color: #808080;
+  font-size: 13px;
+  line-height: 24px;
+  outline-style: none;
+  opacity: .8;
+  transition-duration: 200ms;
+}
+.panel .formField:focus {
+  background-color: hsla(0,0%,100%,1);
+  border-color: #4595e5;
+  opacity: 1;
+}
+
+
+
+/* ---Sub Panel Menus--- */
+.panel-subPanelMenu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: -6px;
+  width: 240px;
+  margin-left: 11px;
+  padding: 4px;
+  background-color: hsla(0,0%,100%,1);
+  background-clip: padding-box;
+  border: 1px solid hsla(210,4%,10%,.2);
+  box-shadow: 0 3px 5px hsla(210,4%,10%,.1),
+              0 0 7px hsla(210,4%,10%,.1);
+  color: #222426;
+  opacity: 0;
+  z-index: 9999;
+  transition-duration: 250ms;
+  -moz-user-select: none;
+  cursor: default;
+  visibility: hidden;
+}
+
+.bookmarkFolderItem:hover .panel-subPanelMenu {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+/* --Menu Panel-- */
+.menuPanel {
+  height: 364px;
+  right: -29px;
+}
+
+.menuPanel-overflowContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  margin: -4px;
+  padding: 4px;
+  overflow: hidden;
+}
+
+.menuPanel-contentContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  transition-duration: 250ms;
+}
+
+.menuPanel-subViewContainer {
+  position: absolute;
+  top: 0;
+  left: 218px;
+  width: 218px;
+  margin: -1px 0;
+  flex: 1 1 auto;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 99999;
+  height: -moz-calc(100% + 3px);
+}
+.menuPanel-subViewContainer > div {
+  flex: 0 0 auto;
+}
+
+.panel-subView-header {
+  display: flex;
+  margin: -4px -4px 4px;
+  padding: 0 10px;
+  height: 40px;
+  background-color: hsla(210,4%,10%,.04);
+  box-shadow: 0 -1px 0 hsla(210,4%,10%,.08) inset;
+}
+.panel-subView-header > .label {
+  color: #797c80;
+  font-size: 11px;
+  line-height: 40px;
+}
+
+/* MenuPanel - Footer */
+.panel-bottomRow-button.customizeButton {
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.panel-bottomRow-button.quitButton:hover { background-color: #d94141; }
+.panel-bottomRow-button.quitButton:hover:active { background-color: #ad3434; }
+.panel-bottomRow-button.quitButton:hover:active > .iconContainer { background-position: right center; }
+
+.panel-bottomRow-button.helpButton,
+.panel-bottomRow-button.quitButton {
+  flex: 0 1 auto;
+  width: 46px;
+}
+.panel-bottomRow-button.helpButton > .iconContainer,
+.panel-bottomRow-button.quitButton > .iconContainer {
+  margin-right: 0;
+}
+
+/* Icons - Menu Panel */
+.panel-splitButtonSegment > .iconContainer { background-position: left center; }
+.panel-splitButtonSegment:hover > .iconContainer { background-position: center center; }
+
+.panel-gridItem > .iconContainer { background-position: left center; }
+.panel-gridItem:hover > .iconContainer { background-position: center center; }
+.panel-gridItem.open > .iconContainer { background-position: right center; }
+
+.panel-bottomRow-button > .iconContainer { background-position: left center; }
+.panel-bottomRow-button:hover > .iconContainer { background-position: center center; }
+
+.panel-splitButtonSegment.cutButton > .iconContainer { background-image: url("../images-win8/menuPanel-icon-cut.png"); }
+.panel-splitButtonSegment.copyButton > .iconContainer { background-image: url("../images-win8/menuPanel-icon-copy.png"); }
+.panel-splitButtonSegment.pasteButton > .iconContainer { background-image: url("../images-win8/menuPanel-icon-paste.png"); }
+.panel-splitButtonSegment.zoomInButton > .iconContainer { background-image: url("../images-win8/menuPanel-icon-zoomIn.png"); }
+.panel-splitButtonSegment.zoomOutButton > .iconContainer { background-image: url("../images-win8/menuPanel-icon-zoomOut.png"); }
+
+.panel-gridItem.newWindowButton > .iconContainer { background-image: url("../images-win8/menuPanel-icon-newWindow.png"); }
+.panel-gridItem.privateWindowButton > .iconContainer { background-image: url("../images-win8/menuPanel-icon-privateWindow.png"); }
+.panel-gridItem.saveButton > .iconContainer { background-image: url("../images-win8/menuPanel-icon-save.png"); }
+
+.panel-gridItem.printButton > .iconContainer { background-image: url("../images-win8/menuPanel-icon-print.png"); }
+.panel-gridItem.historyButton > .iconContainer { background-image: url("../images-win8/menuPanel-icon-history.png"); }
+.panel-gridItem.fullscreenButton > .iconContainer { background-image: url("../images-win8/menuPanel-icon-fullscreen.png"); }
+
+.panel-gridItem.findButton > .iconContainer { background-image: url("../images-win8/menuPanel-icon-find.png"); }
+.panel-gridItem.settingsButton > .iconContainer { background-image: url("../images-win8/menuPanel-icon-settings.png"); }
+.panel-gridItem.addonsButton > .iconContainer { background-image: url("../images-win8/menuPanel-icon-addons.png"); }
+
+.panel-bottomRow-button.customizeButton > .iconContainer { background-image: url("../images-win8/menuPanel-icon-customize.png"); }
+.panel-bottomRow-button.helpButton > .iconContainer { background-image: url("../images-win8/menuPanel-icon-help.png"); }
+.panel-bottomRow-button.quitButton > .iconContainer { background-image: url("../images-win8/menuPanel-icon-quit.png"); }
+
+.panel-gridItem.shareButton > .iconContainer { background-image: url("../images-win8/menuPanel-icon-share.png"); }
+.panel-gridItem.feedButton > .iconContainer { background-image: url("../images-win8/menuPanel-icon-feed.png"); }
+.panel-gridItem.panoramaButton > .iconContainer { background-image: url("../images-win8/menuPanel-icon-panorama.png"); }
+.panel-gridItem.syncButton > .iconContainer { background-image: url("../images-win8/menuPanel-icon-sync.png"); }
+
+
+
+/* --Downloads Panel-- */
+.downloadsPanel {
+  right: 50px;
+  width: 320px;
+}
+
+.downloadItem {
+  min-height: 54px;
+}
+
+.downloadItem-actionButton-primary {
+  display: flex;
+  flex: 1 1 auto;
+  padding: 0 8px;
+}
+
+.downloadMissing .downloadItem-actionButton-primary {
+  opacity: .5;
+  filter: url("../effects.svg#desaturateImage");
+}
+.downloadMissing .downloadItem-actionButton-primary .downloadStatus {
+  color: #181a1b;
+}
+
+.downloadCancelled .downloadItem-actionButton-primary:hover,
+.downloadCancelled .downloadItem-actionButton-primary:hover:active,
+.downloadMissing .downloadItem-actionButton-primary:hover,
+.downloadMissing .downloadItem-actionButton-primary:hover:active {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.downloadItem-actionButton-primary > .iconContainer {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+  background-size: 32px 32px;
+}
+.downloadInformation {
+  flex: 1 1 auto;
+}
+.downloadInformation > .label {
+  flex: 1 1 auto;
+  font-size: 12px;
+  line-height: 10px;
+  margin-bottom: 6px;
+}
+.downloadInformation > .label:last-child { margin-bottom: 0; }
+
+.downloadInformation > .downloadStatus {
+  color: hsl(0,0%,50%);
+  font-size: 10px;
+  line-height: 8px;
+}
+.downloadInformation > .progressBar {
+  width: 100%;
+  height: 6px;
+  border: none;
+  background-color: #ccc;
+}
+.downloadInformation > .progressBar::-moz-progress-bar {
+  background-color: #0082ea;
+}
+
+.downloadPaused .downloadInformation > .progressBar::-moz-progress-bar {
+  background-color: #808080;
+  background-image: repeating-linear-gradient(-45deg, transparent, transparent 3px, rgba(255,255,255,.2) 3px, rgba(255,255,255,.2) 6px);
+}
+
+.downloadItem-actionButton-secondary {
+  flex: 0 0 auto;
+  padding: 0 14px;
+}
+.downloadItem-actionButton-secondary > .iconContainer {
+  width: 16px;
+  height: 16px;
+  margin-right: 0;
+}
+
+/* Icons */
+.downloadInProgress .downloadItem-actionButton-primary > .iconContainer { background-image: url("../images-win8/downloadPanel-icon-exe.png"); }
+.downloadComplete   .downloadItem-actionButton-primary > .iconContainer { background-image: url("../images-win8/downloadPanel-icon-exe.png"); }
+.downloadMissing    .downloadItem-actionButton-primary > .iconContainer { background-image: url("../images-win8/downloadPanel-icon-exe.png"); }
+.downloadCancelled  .downloadItem-actionButton-primary > .iconContainer { background-image: url("../images-win8/downloadPanel-icon-exe.png"); }
+.downloadPaused     .downloadItem-actionButton-primary > .iconContainer { background-image: url("../images-win8/downloadPanel-icon-exe.png"); }
+
+.downloadInProgress .downloadItem-actionButton-secondary > .iconContainer { background-image: url("../images-win8/downloadPanel-cancel.png"); }
+.downloadComplete   .downloadItem-actionButton-secondary > .iconContainer { background-image: url("../images-win8/downloadPanel-show.png"); }
+.downloadMissing    .downloadItem-actionButton-secondary > .iconContainer { background-image: url("../images-win8/downloadPanel-info.png"); }
+.downloadCancelled  .downloadItem-actionButton-secondary > .iconContainer { background-image: url("../images-win8/downloadPanel-restart.png"); }
+.downloadPaused     .downloadItem-actionButton-secondary > .iconContainer { background-image: url("../images-win8/downloadPanel-cancel.png"); }
+
+
+
+
+/* --Bookmark Editing Panel-- */
+.bookmarkEditingPanel {
+  right: 111px;
+  width: 280px;
+}
+
+.bookmarkEditingPanel .panel-header-icon > .iconContainer {
+  background-image: url("../images-win8/bookmarkEditPanel-icon-header.png");
+}
+
+.bookmarkEditingPanel .panel-row {
+  display: flex;
+  justify-content: stretch;
+  margin: 8px 0;
+  padding: 0 8px;
+  height: 24px;
+}
+
+.bookmarkEditingPanel .panel-row > .label {
+  min-width: 54px;
+  height: 24px;
+  margin-right: 6px;
+  font-size: 11px;
+  line-height: 24px;
+  text-align: right;
+}
+
+.bookmarkEditingPanel .panel-row .formField {
+  font-size: 11px;
+}
+
+.bookmarkEditingPanel .expanderButton {
+  max-width: 32px;
+  min-width: 32px;
+  margin-left: 6px;
+  background-image: url("../images-win8/expanderArrow-down.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+
+
+/* --Bookmarks Menu Panel-- */
+.bookmarksMenuPanel {
+  right: 84px;
+}
+
+.bookmarkItem > .iconContainer {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  background-image: url("../images-win8/favicon-generic.png");
+  background-size: 16px auto;
+}
+
+.panel-menuItem.toggleable > .iconContainer {
+  width: 0;
+  height: 16px;
+  transition-duration: 150ms;
+}
+.panel-menuItem.toggleable.toggled > .iconContainer {
+  width: 16px;
+  margin-right: 6px;
+  background-image: url("../images-win8/menuItem-icon-checkmark.png");
+  background-size: auto 16px;
+}
+
+.panel-menuItemSeparator {
+  margin: 4px 4px;
+  height: 1px;
+  min-height: 1px;
+  background-color: hsla(210,4%,10%,.15);
+}
+
+/* Icons — Bookmark Items */
+.bookmarkItem.bookmarkFolderItem > .iconContainer { background-image: url("../images-win8/bookmarkPanel-icon-folder.png"); }
+.bookmarkItem.bookmarksToolbarItem > .iconContainer { background-image: url("../images-win8/bookmarkPanel-icon-bookmarksToolbar.png"); }
+.bookmarkItem.bookmarksSmartFolder > .iconContainer { background-image: url("../images-win8/bookmarkPanel-icon-folderSmart.png"); }
+.bookmarkItem.bookmarksFeedFolder > .iconContainer { background-image: url("../images-win8/bookmarkPanel-icon-folderLive.png"); }
+.bookmarkItem.unsortedBookmarksItem > .iconContainer { background-image: url("../images-win8/bookmarkPanel-icon-unsortedBookmarks.png"); }
+
+
+
+/* --Site Info Panel(s) --*/
+.panel-info {
+  left: -8px;
+  width: 320px;
+}
+
+.panel-info .panel-arrowUp {
+  background-position: 40px top;
+}
+
+.panel-info .panel-header {
+  display: flex;
+  padding: 8px;
+}
+
+.panel-info .panel-header-icon > .iconContainer {
+  width: 64px;
+  height: 64px;
+  margin-right: 24px;
+}
+
+.panel-info .panel-header .label {
+  margin-bottom: 1em;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.panel-siteIdentity-default .panel-header-icon > .iconContainer {
+  background-image: url("../images-win8/siteIdentity-larry-default.png");
+}
+
+
+/* --ContentArea-- */
+.contentArea {
+  flex: 1;
+  background-color: white;
+  background-image: url("../images-general/website-mozilla.svg");
+  border-radius: 0 0 2px 2px;
+}
+
+.customizationIncontentUI {
+  display: flex;
+  height: 100%;
+  opacity: 0;
+}
+
+.customizationIncontentUI-toolBucket {
+  flex: 1;
+  padding: 20px;
+  height: 100%;
+  background-color: hsl(0,100%,100%);
+  border-radius: 0 0 0 2px;
+}
+
+.customizationIncontentUI-menuArea {
+  width: 296px;
+  height: 100%;
+  background-image: url("../images-general/customizeMode-separatorHorizontal.png"),
+                    url("../images-general/customizeMode-separatorVertical.png"),
+                    url("../images-general/customizeMode-gridTexture.png"),
+                    url("../images-general/background-noise-toolbar.png"),
+                    linear-gradient(to bottom, #3e86ce, #3878ba);
+  background-position: center top, left center, left top, left top, left top;
+  background-repeat: no-repeat, no-repeat, repeat, repeat, no-repeat;
+  background-size: auto 12px, 12px 100%, auto, auto, auto;
+  background-attachment: scroll, scroll, fixed, fixed, scroll;
+}
+
+.customizationIncontentUI-toolBucket h1 {
+  margin-bottom: 1em;
+  color: #406480;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: lighter;
+}
+
+.customizationIncontentUI-toolBucket-toolRow {
+  display: flex;
+}
+
+.customizationIncontentUI-toolBucket-toolRow .label {
+  font-size: 10px;
+  line-height: 10px;
+}
+
+.customizationIncontentUI-toolBucket-toolRow .menuPanel-gridItem {
+  margin-right: 16px;
+}
+
+
+
+/* Customize Mode */
+.windowOuterContainer.customizeMode {
+  padding: 20px;
+}
+
+.window.customizeMode {
+  background-image: url("../images-general/customizeMode-gridTexture.png");
+  background-repeat: repeat;
+  background-size: auto;
+  background-attachment: fixed;
+}
+
+.tabStripBackground.customizeMode {
+  top: 55px;
+  left: 65px;
+  width: -moz-calc(100% - 105px);
+  height: 10px;
+  background-color: #dae0e5;
+  box-shadow: 0 0 30px 25px #dae0e5;
+  opacity: .7;
+}
+
+.searchText.customizeMode,
+.searchBar.customizeMode {
+  -moz-user-select: none !important;
+  cursor: -moz-grab !important;
+}
+
+.toolbarCustomizeModeSpacer {
+  width: 0;
+  transition-duration: 500ms;
+}
+
+.toolbarCustomizeModeSpacer.customizeMode {
+  width: 360px;
+}
+
+.navBarCustomizationModeIndicator.customizeMode {
+  opacity: 1;
+}
+
+.menuPanel.customizeMode {
+  transform: translate(-48px, 32px);
+  height: 520px;
+}
+
+.panel-row.empty.customizeMode {
+  display: flex;
+  opacity: 1;
+}
+
+.panel-bottomRow.customizeMode .panel-bottomRow-button.helpButton,
+.panel-bottomRow.customizeMode .panel-bottomRow-button.quitButton {
+  opacity: .3;
+  pointer-events: none;
+}
+
+.panel-bottomRow.customizeMode:hover .panel-buttonSeparator {
+  margin: 7px 0px;
+}
+
+.panel-bottomRow.customizeMode .panel-bottomRow-button.customizeButton {
+  background-color: #177ee5;
+  border: 1px solid hsla(210,80%,20%,.1);
+  box-shadow: 0 1px 0 0 hsla(210,80%,20%,.1) inset;
+  color: white;
+  content: "t";
+}
+.panel-bottomRow.customizeMode .panel-bottomRow-button.customizeButton > .iconContainer {
+  background-position: right center;
+}
+
+.customizationIncontentUI.customizeMode {
+  opacity: 1;
+}
+
+.toolbarButton.customizeMode,
+.menuPanel-gridItem.customizeMode {
+  -moz-user-select: none !important;
+  cursor: -moz-grab !important;
+}
+
+
+
+
+/* Transitions */
+.panel.transition {
+  top: 40px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.menuPanel.transition {
+  top: 40px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/*
+.bookmarkStarButton.open > .iconContainer { background-position: right center; }
+.bookmarkPanelButton.open > .iconContainer { background-position: right center; }
+.downloadButton.open > .iconContainer { background-position: right center; }
+.firefoxButton.open > .iconContainer { background-position: right center; }
+*/
+
+
+.bookmarkingAnimation.transition {
+  animation: animation-bookmarkAdded 800ms 1;
+  animation-timing-function: ease ease ease linear;
+}
+
+.toolbarButton.bookmarkPanelButton.bookmarked > .iconContainer { 
+  animation: animated 500ms 1;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes animated {
+  from { transform: scale(1); }
+  30%   { transform: scale(1.5); }
+  60%   { transform: scale(1); }
+  80%   { transform: scale(1.1); }
+  to   { transform: scale(1); }
+}
+
+
+
+
+
+/* Sub View Transitions */
+.menuPanel.subView-history {
+  height: 656px;
+  background-color: hsla(0,0%,90%,1);
+}
+
+.menuPanel-contentContainer.shifted {
+  transform: translateX(-124px);
+}
+
+.panel-row.empty {
+  transition-duration: 250ms;
+}
+.panel-row.empty.subViewMode {
+  display: flex;
+}
+
+.menuPanel-subViewContainer.toggled {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-181px);
+}
+
+.panel-bottomRow-button.disabled,
+.panel-splitButton.disabled,
+.panel-gridItem:not(.historyButton).disabled {
+  opacity: .5;
+  -moz-transition: opacity 150ms;
+  pointer-events: none;
+}
+.panel-subPanelMenu .panel-bottomRow-button.disabled {
+  opacity: 1;
+  pointer-events: all;
+}
+

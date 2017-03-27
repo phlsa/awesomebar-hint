@@ -1,0 +1,28 @@
+.blue {
+  background-color: #0c99d5; 
+}
+
+.bluePurple {
+  background-image: -webkit-radial-gradient(bottom right, ellipse cover, hsla(300, 100%, 62%, .2), hsla(300, 100%, 62%, 0)),
+                    -webkit-radial-gradient(circle, #3992ca 30%, #19497a);
+	background-image: radial-gradient(ellipse 100% 80% at bottom right, hsla(300, 100%, 62%, .2), hsla(300, 100%, 62%, 0)),
+	                  radial-gradient(circle, #3992ca 30%, #19497a);
+  background-attachment: fixed;
+}
+
+.bluePurple-smoother {
+  background-image: -webkit-radial-gradient(bottom right, ellipse cover, hsla(300, 100%, 62%, .2), hsla(300, 100%, 62%, 0)),
+                    -webkit-radial-gradient(circle, #3992ca, #19497a);
+	background-image: radial-gradient(ellipse 100% 80% at bottom right, hsla(300, 100%, 62%, .2), hsla(300, 100%, 62%, 0)),
+	                  radial-gradient(circle, #3992ca, #19497a);
+  background-attachment: fixed;
+}
+
+.background-desktop-picture {
+  background-image: url("../images-general/background-image.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+
