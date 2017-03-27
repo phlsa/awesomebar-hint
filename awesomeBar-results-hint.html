@@ -82,7 +82,7 @@
                 <div class="locationBar">
                   <div class="identityBlock stateSearch"><div class="iconContainer"></div></div>
                   <div class="identityBlockSeparator"></div>
-                  <div class="urlText" contenteditable="true"><span class="domainName">test</span></div>
+                  <div class="urlText" contenteditable="true"><span class="domainName">&nbsp;</span></div>
                   <div class="topSitesDropdown"><div class="iconContainer"></div></div>
                   <div class="stopGoReload"><div class="iconContainer"></div></div>
                 </div>
@@ -256,7 +256,8 @@
         $("div.popUp-searchResults").removeClass('hidden');
       });
       $(".locationBar div.urlText").blur(function() {
-        $("div.locationBar").toggleClass("focus"); 
+        $("div.locationBar").toggleClass("focus");
+        $("div.popUp-searchResults").addClass('hidden');
       });
       $(".searchBar .searchText").focus(function() {
         $("div.searchBar").toggleClass("focus"); 
