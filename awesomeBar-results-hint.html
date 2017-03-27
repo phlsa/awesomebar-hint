@@ -135,7 +135,7 @@
           
           <!-- ContentArea [Start] -->
           <div class="contentArea">
-            <div class="popUp-searchResults">
+            <div class="popUp-searchResults hidden">
               <div class="item-searchResult hint">
                 <div class="icon iconType-status"></div>
                 <div class="icon iconType-main"></div>
@@ -252,7 +252,8 @@
       
       /*--- Focus Location/Search Fields ---*/
       $(".locationBar div.urlText").focus(function() {
-        $("div.locationBar").toggleClass("focus"); 
+        $("div.locationBar").toggleClass("focus");
+        $("div.popUp-searchResults").removeClass('hidden');
       });
       $(".locationBar div.urlText").blur(function() {
         $("div.locationBar").toggleClass("focus"); 
@@ -265,7 +266,7 @@
       });
 
       $( document ).ready(function() {
-        $(".locationBar div.urlText").focus();
+        //$(".locationBar div.urlText").focus();
       });
 
 

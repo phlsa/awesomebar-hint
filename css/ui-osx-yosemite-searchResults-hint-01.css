@@ -7,6 +7,10 @@
   border-bottom: 1px solid #d9d9d9;
 }
 
+.hidden {
+  display: none;
+}
+
 /* .item-searchResult.hint .icon.iconType-status { background-image: url("../images-general/notifcation-info-16.svg"); } */
 .item-searchResult.hint .icon.iconType-main {  background-image: url("../images-general/glyph-search-16.svg");  }
 
@@ -51,7 +55,7 @@
   color: hsl(210, 77%, 47%);
   animation-name: fade-in;
   animation-duration: 500ms;
-  animation-delay: 2250ms;
+  animation-delay: 1800ms;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
@@ -65,7 +69,7 @@
   transform: scale(0);
   animation-name: buildIn-grow;
   animation-duration: 500ms;
-  animation-delay: 2000ms;
+  animation-delay: 500ms;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
@@ -77,7 +81,7 @@
   text-overflow: clip;
   animation-name: typing;
   animation-duration: 500ms;
-  animation-delay: 2250ms;
+  animation-delay: 750ms;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
@@ -93,7 +97,7 @@
   opacity: 0;
   animation-name: buildIn-tip;
   animation-duration: 250ms;
-  animation-delay: 3000ms;
+  animation-delay: 1500ms;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
